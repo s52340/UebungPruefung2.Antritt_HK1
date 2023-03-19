@@ -12,15 +12,15 @@ public class CountryAnalyzer extends LogEntryAnalyzer{
 
     @Override
     public void analyze() {
-        int counter = 1;
-        ArrayList<LogEntry> logEs = getLogEntries();
+        result.clear();                         //warum clear wenn erst neu erstellt?
+        ArrayList<LogEntry> logEs = super.getLogEntries();
         for (LogEntry logE : logEs) {
             if (result.containsKey(logE.getCountryID())){
-                counter++;
-                result.put(logE.getCountryID(), counter);
+
+                result.put(logE.getCountryID(), result.get(logE.getCountryID()) + 1);
             }
             else {
-                result.put(logE.getCountryID(),counter);
+                result.put(logE.getCountryID(), 1);
             }
         }
 

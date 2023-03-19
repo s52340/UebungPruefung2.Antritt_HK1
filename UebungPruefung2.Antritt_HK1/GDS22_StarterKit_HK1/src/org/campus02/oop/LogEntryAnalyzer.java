@@ -17,6 +17,7 @@ public abstract class LogEntryAnalyzer {
     /**
      * Getter selbst für untere Klassen hinzugefügt
      */
+
     public ArrayList<LogEntry> getLogEntries() {
         return logEntries;
     }

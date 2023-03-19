@@ -11,10 +11,13 @@ public class UniqueAnalyzer extends LogEntryAnalyzer{
 
     @Override
     public void analyze() {
-    ArrayList<LogEntry> logEn = getLogEntries();
+    ArrayList<LogEntry> logEn = super.getLogEntries();
         for (LogEntry logE : logEn) {
            String message = logE.getMessage();
-           result.add(message);
+          if (!result.contains(message)){        //methode richtig verstanden??
+              result.add(message);
+          }
+
         }
     }
 

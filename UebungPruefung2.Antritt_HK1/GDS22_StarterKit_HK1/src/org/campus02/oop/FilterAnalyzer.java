@@ -7,7 +7,7 @@ public class FilterAnalyzer extends LogEntryAnalyzer {
     private String logLevel;
 
     public FilterAnalyzer(String logLevel) {
-        this.result = result;
+       // this.result = result;                 //warum weg? da falsch?
         this.logLevel = logLevel;
     }
 
@@ -21,7 +21,7 @@ public class FilterAnalyzer extends LogEntryAnalyzer {
 
     @Override
     public void analyze() {
-        ArrayList<LogEntry> logEs = getLogEntries();
+        ArrayList<LogEntry> logEs = super.getLogEntries();  //super dringend nötig?
         for (LogEntry logE : logEs) {
             if (logE.getLogLevel().equals(logLevel)){
                 result.add(logE);
